@@ -848,7 +848,7 @@ h1 {
 
 
 .ong-container {
-  background: white;
+ background-color: #e4d9b9;
   animation: gradient-animation 10s ease infinite; /* Animação do gradiente */
   border: 1px solid blueviolet; /* Borda suave */
   border-radius: 8px; /* Bordas arredondadas */
