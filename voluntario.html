@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidado ao Próximo</title>
+    <link rel="stylesheet" href="voluntario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="img/logoss.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&family=Roboto:wght@400;700&family=Lato:wght@400;700&family=Open+Sans:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <img src="img/menu_ft-removebg-preview.png" alt="Imagem Direita" class="small-img menu-toggle"> 
+            <div id="mouse-light"></div>
+            <img id="logo" src="img/Untitled__1_-removebg-preview.png" alt="Logo" class="logo">
+            <main id="small-img">
+                <label class="containe">
+                  <input type="checkbox" id="toggle"/>
+                  <span class="slider round">
+                    <div class="background"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                  </span>
+                </label>
+              </main>
+        </div>
+       
+        <div class="side-menu">
+            <div class="menu-content">
+                <span class="close-menu">&times;</span>
+                <ul>
+                    <center><h1>MENU</h1></center>
+                    <li><button class="button-action" onclick="window.location.href='index.php'">INÍCIO</button></li>
+                    <li><button class="button-action" onclick="window.location.href='doacoes.html'">DOAR</button></li>
+                    <li><button class="button-action" onclick="window.location.href='sobrenos.html'">SOBRE NÓS</button></li>
+                </ul>
+                <p class="voltar-inicio">VOLTAR</p> 
+            </div>
+        </div>
+    </header>
+
+<!-- Contêiner 2: Motivação para se Tornar Voluntário -->
+<div class="container volunteer-container">
+    <h2>SEJA O HERÓI DE ALGUÉM !</h2>
+    <p>Todos nós temos algo a oferecer. Seu tempo pode ser a chave para transformar a vida de alguém. Torne-se voluntário hoje e faça a diferença</p>
+    
+    <div class="video-container">
+        <video width="400" controls>
+            <source src="img/voluntarioooo.mp4" type="video/mp4">
+            Seu navegador não suporta o formato de vídeo.
+        </video>
+    </div>
+</div>
+
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th colspan="2" style="text-align: center;">
+                    <h2>VOLUNTÁRIO</h2>
+                    <p><i>"Amarás o teu Próximo como a ti mesmo"</i></p>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfa8xXna9rqn6T8V33NQL5o_cXEzt1F4y_WB_-5Qi3l5pX6Zg/viewform" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+<div class="chat-icon" onclick="toggleChat()">
+    <img src="img/assistent ai.jpeg" alt="Chatbot Icon">
+</div>
+<div id="chatWindow" class="chat-window">
+    <div class="chat-header">
+        <span>Assistent AI</span>
+        <button class="close-btn" onclick="toggleChat()">✖</button> <!-- Botão de fechar -->
+    </div>
+    <div id="chatLog"></div>
+    <input type="text" id="userInput" placeholder="Digite aqui" />
+    <button onclick="sendMessage()">Enviar</button>
+</div>
+
+
+
+  <footer class="footer" id="footer">
+  <div class="footer-content">
+    <div class="footer-section social">
+      <h4><b>Redes Sociais</b></h4>
+      <a href="https://www.facebook.com/profile.php?id=100075605076567&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/cuidadoproximo?igsh=bjQ1YjdhOTh2MmFs" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <div class="footer-section contact">
+      <h4><b>Contato</b></h4>
+      <p>Endereço: Rua Mil Oitocentos e Vinte e Dois, 368 Ipiranga - São Paulo (SP)</p>
+      <p>Email: cuidadoaoproximo@gmail.com</p>
+      <p>Whats: (11) 9 7736-4837 / Fone: (11) 2274-4136</p>
+    </div>
+
+    <div class="footer-section credits">
+      <p>&copy; 2024 ONG Cuidado ao Próximo. Todos os direitos reservados.</p>
+      <p>Desenvolvido por <b>BDRR</b></p>
+    </div>
+  </div>
+</footer>
+
+
+  
+    <script src="voluntario.js"></script>
+    
+</body>
+</html>
+    

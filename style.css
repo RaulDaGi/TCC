@@ -1,0 +1,1174 @@
+* {
+  box-sizing: border-box; /* Isso ajuda a evitar o estouro da largura */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Define a largura como 100% */
+  overflow-x: hidden; /* Remove a barra de rolagem horizontal */
+}
+
+.container-principal { /* Substitua pelo contêiner principal do seu site */
+  max-width: 100%; /* Limita a largura a 100% da tela */
+  width: 100%;
+}
+
+
+
+/* Remover margens e padding do body */
+body {
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  background-color: #d8bfd8; /* Cor de fundo roxa */
+  animation: revealFromTop 1.5s ease-out forwards;
+  animation-delay: 1s; /* Atraso para iniciar a animação após a logo */
+  overflow-x: hidden; /* Evita a rolagem horizontal */
+}
+
+/* Estilo para a logo com efeito 3D */
+#logo {
+  width: 300px;
+  height: auto;
+  transition: transform 0.1s; /* Transição suave para o efeito */
+  position: relative; /* Adicionado */
+  z-index: 1; /* Para garantir que fique atrás do efeito de luz */
+}
+
+/* Estilo base da logo */
+.header-content {
+  position: relative;
+}
+
+/* Estilo do efeito de luz */
+#mouse-light {
+  position: absolute;
+  width: 150px; /* Aumente ou diminua conforme necessário */
+  height: 150px; /* Aumente ou diminua conforme necessário */
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 249, 207, 0.199), rgba(255, 223, 0, 0) 70%); /* Cor amarela suave */
+  opacity: 0; /* Começa invisível */
+  pointer-events: none; /* Não bloqueia eventos do mouse */
+  transition: opacity 0.35s ease; /* Transição suave */
+  z-index: 2; /* Garantindo que fique na frente da logo */
+}
+
+
+
+/* Exibe o conte�do ap�s a anima��o */
+body.loaded {
+  opacity: 1;
+  overflow: auto; /* Volta a permitir o scroll */
+
+}
+
+/* Cabe�alho com v�deo de fundo unificado com a tela 1 */
+.header {
+  position: relative;
+  height: 100vh; /* Ocupa toda a altura da tela */
+  width: 100%; /* Garante que a largura seja 100% */
+  overflow: hidden; /* Oculta qualquer conte�do que saia da borda */
+}
+
+/* Estilo do v�deo */
+.shared-video {
+  position: absolute; /* Mant�m o v�deo posicionado */
+  top: 0; /* Garante que o v�deo comece no topo */
+  left: 0; /* Garante que o v�deo comece na esquerda */
+  width: 100%; /* Garante que o v�deo cubra toda a largura */
+  height: 100%; /* Garante que o v�deo cubra toda a altura */
+  object-fit: cover; /* O v�deo cobre toda a �rea dispon�vel */
+  z-index: -1; /* Mant�m o v�deo atr�s do conte�do */
+  border-bottom-left-radius: 50px; /* Bordas arredondadas na parte inferior esquerda */
+  border-bottom-right-radius: 50px; /* Bordas arredondadas na parte inferior direita */
+}
+
+/* Estilo para a seção principal */
+.section {
+  background-color: transparent; /* Remove a cor de fundo */
+  padding: 20px; /* Espaçamento interno */
+  display: flex; /* Usando Flexbox */
+  flex-direction: column; /* Direciona os filhos em coluna */
+  align-items: center; /* Centraliza os filhos horizontalmente */
+  justify-content: center; /* Centraliza os filhos verticalmente */
+  min-height: 400px; /* Altura mínima para a seção */
+
+}
+
+/* Estilo do contêiner destacado */
+.highlight-container {
+  position: relative; /* Permite posicionar elementos filhos */
+  margin-top: -80px; /* Ajuste para mover o contêiner para cima */
+  margin-bottom: 50px;
+  width: 800%; /* Largura do contêiner */
+  max-width: 1300px; /* Largura máxima do contêiner */
+  background: linear-gradient(255deg, blueviolet, rgb(255, 116, 197), #d8bfd8); /* Gradiente com repetição */
+  background-size: 300% 300%; /* Tamanho do gradiente para permitir animação */
+  animation: gradient-animation 10s ease infinite; /* Animação do gradiente */
+  padding: 30px; /* Aumentar o espaçamento interno */
+  border-radius: 60px; /* Raio de borda */
+  display: flex; /* Usando Flexbox */
+  flex-direction: column; /* Direciona os filhos em coluna */
+  align-items: center; /* Centraliza os filhos horizontalmente */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+  min-height: 250px; /* Altura mínima do contêiner */
+  height: 600px; /* Altura do contêiner */
+}
+
+/* Animação do gradiente */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; /* Posição inicial */
+  }
+  50% {
+    background-position: 100% 50%; /* Posição no meio da animação */
+  }
+  100% {
+    background-position: 0% 50%; /* Retorna à posição inicial */
+  }
+}
+
+
+.carousel {
+  display: flex; /* Usando Flexbox */
+  justify-content: center; /* Centraliza os itens do carrossel */
+  align-items: center; /* Centraliza verticalmente */
+  width: 70%; /* Largura do carrossel */
+  overflow: hidden; /* Oculta itens que saem da largura */
+  position: relative; /* Permite posicionamento de botões */
+}
+
+/* Estilo de cada item do carrossel */
+.carousel-item {
+  display: flex; /* Usando Flexbox */
+  justify-content: space-between; /* Espaça a imagem e o texto */
+  align-items: center; /* Centraliza verticalmente */
+  min-width: 100%; /* Cada item ocupa 100% da largura */
+  transition: transform 0.5s ease-in-out; /* Transição suave */
+  padding: 40px 10px; /* Espaçamento interno */
+  box-sizing: border-box; /* Garante que padding não mude o tamanho total */
+}
+
+/* Estilo do conteúdo de texto */
+.text-content {
+  max-width: 50%; /* Texto ocupa metade do espaço */
+  min-width: 50%; /* Define uma largura mínima para evitar variações */
+  padding-left: 150px; /* Espaçamento à esquerda */
+  text-align: right; /* Alinha o texto ao centro */
+  box-sizing: border-box; /* Garante que padding não mude o tamanho total */
+  margin-top: -100px; /* Espaçamento superior */
+}
+
+/* Estilo do contêiner b-tam */
+.b-tam {
+  position: relative; /* Permite posicionar elementos dentro */
+  width: 100%; /* Largura do contêiner */
+  height: auto; /* Altura automática para ajustar ao conteúdo */
+  margin-top: 10px; /* Espaçamento acima do contêiner */
+}
+
+
+.text-content h2 {
+  font-family: 'Brice Ousado'; /* Substitua 'Brice Ousado' pelo nome da fonte */
+  color: rgb(0, 0, 0);
+  font-size: 3rem; /* Altere o tamanho conforme necessário */
+  margin: 0; /* Remove a margem padrão */
+  margin-top: 20px; /* Ajusta o espaço acima do título */
+  margin-bottom: 20px; /* Adiciona espaço abaixo do título */
+  text-align: left; /* Alinha o título à esquerda (ou centraliza, se preferir) */
+  line-height: 1.2; /* Ajuste a altura da linha conforme necessário */
+}
+
+.text-content p {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: left; /* Centraliza o texto */
+  margin: 0; /* Remove margens padrão */
+  font-size: 1.5rem; /* Altere o tamanho conforme necessário */
+}
+
+/* Estilo das imagens no carrossel */
+.carousel-item img {
+ width: 800px; /* Defina a largura desejada */
+  height: 400px; /* Defina a altura desejada */
+  margin-top: 20px; /* Espaçamento superior */
+  border: 5px solid #000000; /* Adiciona uma borda sólida */
+  padding: 10px; /* Ajusta o espaçamento interno para destacar a borda */
+  border-radius: 20px; /* Suaviza os cantos */
+}
+
+
+
+/* Estilo dos botões de navegação */
+button.prev, button.next {
+  font-family: ' Roboto';
+  background-color: transparent; /* Fundo transparente */
+  border: none; /* Remove bordas */
+  font-size: 2rem; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor em forma de ponteiro */
+  position: absolute; /* Permite posicionamento livre */
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Ajusta para centralização correta */
+}
+
+/* Estilo do botão "anterior" */
+button.prev {
+  left: 10px; /* Posiciona a seta à esquerda */
+}
+
+/* Estilo do botão "próximo" */
+button.next {
+  right: 10px; /* Posiciona a seta à direita */
+}
+
+/* Efeito de transição para as setas */
+button.prev, button.next {
+  transition: transform 0.3s ease; /* Suaviza a animação */
+}
+
+/* Efeito de clique */
+button.prev:active, button.next:active {
+  transform: scale(0.9); /* Reduz o tamanho quando clicado */
+}
+
+
+
+.header-content {
+  position: absolute;
+  top: 2px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around; /* Mant�m as imagens nas laterais e a logo centralizada */
+  align-items: center;
+  padding: 0 20px; /* Padding nas laterais */
+  flex-direction: row-reverse;
+  left: 50px;
+
+}
+
+.small-img {
+  width: 100px;
+  height: auto;
+  margin: 0 20px; /* Margem para afastar mais as imagens do canto */
+
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --dark: #111111;
+  --sun: #ffd700;
+  --sun-shadow: #987416;
+  --moon: #dddddd;
+  --moon-shadow: #808080;
+  --star: #ffffff;
+  --cloud: #ffffff;
+  --crater: #535370;
+  --shadow-01: #80808077;
+  --shadow-02: #ffffff22;
+  --shadow-03: #555555;
+  --white: #ffffff;
+  --background-day: linear-gradient(skyblue, cadetblue);
+  --background-night: linear-gradient(-45deg, #222, #000030);
+}
+main{
+ 
+  -webkit-transition: .4s;
+  transition: .4s;
+
+}
+.dark{
+  background: var(--dark);
+}
+.containe{
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height:px;
+
+  -webkit-transform: scale(3);
+  transform: scale(3);
+}
+.containe input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider{
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: var(--background-day);
+  box-shadow: inset 0 0 3px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+
+  filter: drop-shadow(0 0 2px var(--dark));
+
+  overflow: hidden;
+  z-index: 1;
+  width: 100%; /* Ajustar para ocupar todo o contêiner */
+  height: 100%; /* Ajustar para ocupar todo o contêiner */
+}
+.slider::before{
+  position: absolute;
+  content: "";
+  height: 10px; /* sol*/
+  width: 10px;/* sol*/
+  left: 2px;
+  bottom: 4px;
+  background-color: var(--sun);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  box-shadow:
+    inset 0 -1px 2px var(--sun-shadow),
+    0 1px 2px var(--shadow-01),
+    0 0 0 10px var(--shadow-02),
+    0 0 0 20px var(--shadow-02),
+    10px 0 0 20px var(--shadow-02);
+}
+input:checked + .slider{
+  background: var(--background-night);
+  filter: drop-shadow(0 0 2px var(--white));
+  left: 2px;
+  right: 10px;
+}
+
+input:checked + .slider:before{
+  background: var(--moon);
+  -webkit-transform: translateX(180%);
+  -ms-transform: translateX(180%);
+  transform: translateX(180%);
+  box-shadow:
+    0 1px 2px var(--shadow-03),
+    0 0 0 10px var(--shadow-02),
+    0 0 0 20px var(--shadow-02),
+    -10px 0 0 20px var(--shadow-02);
+}
+
+.slider::after{
+  content: "";
+  position: absolute;
+  background: var(--crater);
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  bottom: 65%;
+  right: 10%;
+
+  -webkit-transition: .4s;
+  transition: .4s;
+  -webkit-transform: scale(0) rotate(360deg);
+  transform: scale(0) rotate(360deg);
+  filter: saturate(.75);
+}
+
+input:checked + .slider::after{
+  -webkit-transform: scale(1) rotate(-24deg);
+  transform: scale(1) rotate(-24deg);
+}
+input:checked + .slider .background{
+  -webkit-transform: translateY(260%);
+  transform: translateY(260%);
+  opacity: 0;
+}
+
+.star{
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider .star{
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border: 10px solid transparent;
+  border-bottom: 7px solid var(--star);
+  transform: rotate(35deg);
+  border-top: none;
+  margin: 5px 0;
+  -webkit-transform: scale(.3) translate(50%);
+  transform: scale(.3) translate(50%);
+}
+input:checked + .slider .star:last-child{
+  -webkit-transform: scale(.4) translate(225%, 300%);
+  transform: scale(.4) translate(225%, 300%);
+}
+input:checked + .slider .star::before,
+input:checked + .slider .star::after{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: none;
+}
+input:checked + .slider .star::before{
+  border: 3px solid transparent;
+  border-bottom: 8px solid var(--star);
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+  top: -7.5px;
+  left: 1.5px;
+}
+input:checked + .slider .star::after{
+  border: 10px solid transparent;
+  border-bottom: 7px solid var(--star);
+  -webkit-transform: rotate(70deg);
+  transform: rotate(70deg);
+  top: -7px;
+  left: -4.5px;
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+.background{
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: var(--cloud);
+  border-radius: 50%;
+  bottom: 0;
+  right: 0;
+
+  ;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+.central-content {
+  font-family: 'Brice Ousado'; /* Substitua 'Brice Ousado' pelo nome da fonte */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-size: 3em;
+  font-weight: bold;
+  color: var(--white);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'Brice Ousado';
+  src: url('fonts/BriceOusado.ttf') format('truetype'); /* ajuste o caminho conforme necessário */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+p{
+  font-family: 'Source Sans Pro';
+}
+
+.button-see-more {
+  font-family: ' Roboto';
+  background-color: #111; /* Cor de fundo inicial do botão */
+  color: #ffffff; /* Cor do texto do botão */
+  border: 3px solid rgb(0, 0, 0); /* Remover borda do botão */
+  padding: 15px 30px; /* Espaçamento interno (padding) do botão */
+  border-radius: 10px; /* Bordas arredondadas */
+  font-size: 1rem; /* Tamanho da fonte */
+  cursor: pointer; /* Ícone de cursor de "pointer" ao passar o mouse */
+  margin: 10px 0; /* Margem para separar o botão dos outros elementos */
+  box-shadow: 0 2px 5px #9370db; /* Sombra do botão para dar profundidade */
+  position: relative; /* Definindo a posição relativa para ajustar o efeito da bolinha */
+  overflow: hidden; /* Para garantir que a bolinha não transborde do botão */
+  transition: background-color 0.3s ease-in-out; /* Transição suave da cor de fundo ao passar o mouse */
+  
+}
+
+.button-see-more::before {
+  content: ""; /* Elemento extra para criar a bolinha */
+  position: absolute; /* Posição absoluta dentro do botão */
+  top: 50%; /* Iniciar a bolinha no centro do botão */
+  left: 50%; /* Iniciar a bolinha no centro do botão */
+  width: 300%; /* Definir o tamanho inicial da bolinha maior que o botão */
+  height: 300%; /* Definir o tamanho inicial da bolinha maior que o botão */
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 10%); /* Gradiente radial para criar o efeito de uma bolinha branca no centro */
+  transform: translate(-50%, -50%) scale(0); /* Centralizar a bolinha e começar com escala 0 (invisível) */
+  transition: transform 0.3s ease-in-out; /* Transição suave da escala da bolinha */
+  
+}
+
+.button-see-more:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Expandir a bolinha ao passar o mouse sobre o botão */
+}
+
+.button-see-more:hover {
+  background-color: #9370db; /* Mudar a cor de fundo quando o mouse estiver sobre o botão */
+  color: #000000; /* Manter a cor do texto branca */
+}
+
+.button-see-more:active {
+  transform: scale(0.95); /* Reduzir levemente o botão quando clicado (efeito de clique) */
+  box-shadow: 0 1px 3px #9370db; /* Sombra reduzida quando clicado */
+}
+.card-container {
+  display: flex; /* Usar flexbox */
+  flex-wrap: wrap; /* Permitir que os cards quebrem para a próxima linha */
+  justify-content: center; /* Centraliza os cards */
+  max-width: 1200px; /* Limite a largura do contêiner */
+  margin: 0 auto; /* Centraliza o contêiner na página */
+  margin-bottom: 100px;
+}
+
+.card-inner {
+  display: flex; /* Ativa o Flexbox */
+  flex-direction: column; /* Organiza os itens em coluna */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  height: 100%; /* Garante que o conteúdo ocupe toda a altura do card */
+}
+
+
+.card {
+  display: inline-block;
+  width: 40%; /* Ajustar para um pouco menos de 33.33% para espaço entre os cards */
+  margin: 15px; /* Menos margem para evitar quebra de linha */
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aumentando a duração da transição */
+  box-shadow: 10px 10px #1111115f; /* Sombra amarela com efeito de sobreposição */
+  border-color:blueviolet;
+  border: 5px solid ;
+  border-image: linear-gradient(255deg, blueviolet) 1; /* Cria o gradiente para a borda */
+  perspective: 1000px; /* Cria a perspectiva para o efeito 3D */
+  will-change: transform; /* Indica ao navegador que a propriedade vai mudar */
+  animation: moveUpDown 2s ease-in-out infinite; /* Aplica a animação */
+  transition: transform 0.1s ease-out; /* Suaviza a rotação 3D */
+}
+
+
+.light-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px;
+  background: radial-gradient(circle, rgba(255, 105, 180, 0.3), rgba(173, 216, 230, 0) 70%);
+  opacity: 0; /* Começa invisível */
+  pointer-events: none; /* Não bloqueia eventos do mouse */
+  transition: opacity 0.35s ease; /* Transição suave */
+}
+
+.card:hover .light-effect {
+  opacity: 1; /* Fica visível ao passar o mouse */
+}
+
+
+/* Define a animação de movimento para o estado normal */
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0); /* Posição original */
+  }
+  50% {
+    transform: translateY(-10px); /* Mover para cima */
+  }
+}
+
+/* Imagem dentro do contêiner */
+.card-inner img {
+  width: 100%;
+  height: 230px;
+  border-radius: 10px;
+  border: 5px inset #ffffff !important; /* Forçando a cor da borda */
+}
+
+
+.card-title {
+  font-family: 'Source Sans Pro';
+  color: #000;
+  font-size: 1.3rem;
+  margin: 10px 0;
+}
+
+.card-location {
+  font-size: 1.2rem;
+  color: #4f4f4f;
+  margin: 5px 0;
+}
+
+/* Efeito 3D ao passar o mouse */
+.card:hover {
+  animation: none; /* Remove a animação de movimento ao passar o mouse */
+  transform: rotateY(10deg); /* Adicione a transformação que você deseja para o efeito 3D */
+}
+
+/* Define a animação de movimento para o estado normal */
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0); /* Posição original */
+  }
+  50% {
+    transform: translateY(-10px); /* Mover para cima */
+  }
+}
+
+:root {
+  --animate-duration: 1s; /* Duração da animação */
+  --animate-delay: 1s;    /* Atraso da animação */
+  --animate-repeat: 1;     /* Número de repetições (não se aplica diretamente ao hover) */
+}
+
+/* Estilo do link da localização */
+.location-link {
+  color: #FF64CD; /* Cor rosa do botão */
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+.location-link:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Conteiner com altura escondida por padrão */
+.info-container {
+  height: 0; /* Escondido por padrão */
+  overflow: hidden;
+  transition: height 0.5s ease; /* Animação de expansão */
+}
+
+/* Expande o container quando o card tem a classe "expanded" */
+.card.expanded .info-container {
+  height: auto; /* Expande conforme o conteúdo */
+}
+
+.info-text {
+  font-family: 'Times New Roman', Times, serif;
+  color: #b4007b;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* Anima��o para a rota��o da seta */
+.seta {
+  color: #FF64CD;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.3s ease; /* Anima��o para a rota��o da seta */
+}
+
+/* Roda a seta quando o conte�do � expandido */
+.seta.rotated {
+  transform: rotate(180deg); /* Roda a seta para baixo */
+}
+
+/* Estilos gerais para o rodapé */
+.footer {
+  background: linear-gradient(30deg, #d8bfd8, rgb(255, 116, 197), rgb(157, 70, 245)); /* Gradiente com repetição */
+  color: #000000; /* Cor do texto do rodapé */
+  padding: 20px 0; /* Espaçamento interno do rodapé */
+  text-align: center; /* Alinhamento do texto ao centro */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  border-top-left-radius: 50px; /* Bordas arredondadas na parte inferior esquerda */
+  border-top-right-radius: 50px; /* Bordas arredondadas na parte inferior direita */
+}
+.footer h4{
+  font-family: 'Montserrat'
+}
+
+.footer-content {
+  max-width: 1200px; /* Largura máxima do conteúdo do rodapé */
+  margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+  display: flex; /* Usa flexbox para alinhar as seções */
+  flex-wrap: wrap; /* Permite que as seções quebrem linha */
+  justify-content: space-around; /* Espaça uniformemente as seções */
+  padding: -60px; /* Espaçamento interno lateral do conteúdo */
+}
+
+.footer-section {
+  margin: 10px; /* Margem entre as seções */
+  flex: 1; /* Flexibilidade das seções */
+  min-width: 200px; /* Largura mínima das seções */
+}
+
+.footer-section h4 {
+  color: #ffe6e6;
+  margin-bottom: 10px; /* Espaçamento abaixo do título */
+  font-size: 1.8em; /* Tamanho da fonte dos títulos */
+}
+
+.footer-section p {
+  font-family: sans-serif;
+  margin: 5px 0; /* Margem entre os parágrafos */
+  line-height: 1.5; /* Altura da linha */
+  font-size: 1.1rem;
+}
+
+.footer-section a {
+  color: #000000; /* Cor dos links */
+  text-decoration: none; /* Remove a sublinhado dos links */
+  margin: 0 10px; /* Margem entre os ícones */
+  font-size: 2em; /* Tamanho dos ícones */
+}
+
+.footer-section a:hover {
+  color: #fff; /* Cor ao passar o mouse nos links */
+}
+
+.footer-section .credits {
+  width: 100%; /* Ocupa 100% da largura disponível */
+  text-align: center; /* Alinha o texto ao centro */
+  margin-top: 20px; /* Espaçamento acima dos créditos */
+}
+
+
+.dark {
+  background: var(--dark); /* Defina a cor de fundo desejada aqui */
+  color: white; /* Adiciona cor de texto clara para contraste */
+}
+
+.card{
+  background-color: #f5f5f5; /* Cor de fundo roxa */
+}
+.dark .container,
+.dark .card,
+.dark .section {
+  background-color: #111; /* Cor de fundo escura */
+}
+
+/* Alterando cores para o modo escuro */
+.dark .card-title,
+.dark .card-location,
+.dark .info-text {
+  color: #ffffff; /* Cor de texto branca para contraste */
+}
+
+.dark .button-doacao {
+  background-color: #FF64CD; /* Cor de fundo do botão */
+  color: #ffffff; /* Cor do texto do botão */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* Sombra branca */
+}
+
+.dark .footer {
+  background-color: #111; /* Fundo do rodapé */
+  color: #ffffff; /* Cor do texto do rodapé */
+}
+
+.dark .footer-section a {
+  color: #ffffff; /* Cor dos links no rodapé */
+}
+
+.dark .location-link {
+  color: #ffffff; /* Cor do link da localização */
+}
+
+/* Ajuste adicional para as sombras dos contêineres */
+.dark .card {
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* Sombra branca para o card */
+}
+
+/* Para garantir que a seta também fique visível */
+.dark .seta {
+  color: #ffffff; /* Cor da seta */
+}
+
+
+
+
+
+
+/*header*/
+/* Estilos para o lateral */
+.side-menu {
+  position: absolute; /* Deixa o menu descer junto com o site */
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 300px;
+  background-color: #ffffff; /* Cor roxa */
+  transform: translateX(100%); /* Inicia fora da tela */
+  transition: transform 0.3s ease-in-out; /* Transição suave */
+  z-index: 999; /* Aumenta o z-index para garantir que o menu fique acima do conteúdo */
+  border-radius: 30px 0 0 30px; /* Bordas arredondadas */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra */
+  overflow-x: hidden; /* Evita rolagem horizontal */
+  overflow-y: auto; /* Permite rolagem vertical, se necessário */
+}
+
+.side-menu.active {
+  transform: translateX(0); /* Move o menu para dentro da tela quando ativo */
+}
+
+.menu-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu h1 {
+  font-size: 4rem;
+}
+
+.side-menu li a {
+  color: white;
+  border: none;
+  padding: 0; /* Remove o preenchimento */
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin: 15px 0;
+  text-align: center;
+  background-color: transparent; /* Remove a cor de fundo */
+  box-shadow: none; /* Remove a sombra */
+}
+
+
+.side-menu li a:hover {
+  background-color: #9370db; /* Muda para roxo escuro ao passar o mouse */
+}
+
+.voltar-inicio {
+  cursor: pointer;
+  text-align: center;
+  padding: 15px;
+  border: none;
+  background-color: blueviolet;
+  color: #fff;
+  border-radius: 20px; /* Botão arredondado */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra mais forte */
+}
+
+.voltar-inicio:hover {
+  background-color: #FF64CD;
+}
+
+
+
+.chat-icon {
+  position: fixed; /* Garante que o ícone fique fixo na tela */
+  bottom: 20px; /* Coloca o ícone a 20px do rodapé da janela */
+  right: 20px;
+  cursor: pointer;
+  z-index: 1000; /* Garante que o ícone fique acima de outros elementos */
+}
+
+.chat-icon img {
+  width: 100px; /* Aumenta o tamanho da imagem */
+  height: 100px; /* Aumenta o tamanho da imagem */
+  border-radius: 50%; /* Faz a imagem ficar circular */
+  border: 5px solid black; /* Adiciona uma borda preta ao redor da imagem */
+}
+
+.dark .chat-icon img{
+  border: 5px solid #FF64CD; /* Adiciona uma borda preta ao redor da imagem */
+}
+
+
+.chat-window {
+  display: none;
+  position: fixed;
+  bottom: -400px; /* Coloca a janela fora da tela (desce para fora do rodapé) */
+  right: 30px;
+  height: 400px;
+  width: 500px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1px;
+  padding-right: 0px;
+  padding-top: 30px;
+  margin-bottom: -200px;
+  z-index: 980;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(255, 100, 205, 0.6); /* Sombra mais forte */
+}
+
+
+.chat-window iframe {
+  width: 100%; /* Para preencher a largura da janela */
+  height: 90%; /* Para preencher a altura da janela */
+  border: none; /* Remove bordas indesejadas */
+  margin: 0;
+  padding: 20px;
+  margin-top: -20px;
+}
+
+.dark .chat-window{
+  background-color: #111111;
+}
+
+.chat-header {
+  font-family: 'Montserrat';
+  display: flex;
+  justify-content: space-between; /* Espaça o título e o botão */
+  align-items: center; /* Centraliza verticalmente */
+  margin-bottom: 10px; /* Espaçamento abaixo do cabeçalho */
+  padding-left: 15px;
+}
+
+.dark .chat-header {
+  color: #FF64CD ;
+}
+
+.dark .close-btn {
+  color: #FF64CD ;
+}
+
+.close-btn {
+  background: none; /* Remove o fundo do botão */
+  border: none; /* Remove a borda do botão */
+  font-size: 20px; /* Tamanho do ícone */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  color: #000;
+}
+
+#chatLog {
+  max-height: 200px; /* Altura máxima do log de chat */
+  overflow-y: auto; /* Permite rolagem quando as mensagens excedem a altura */
+  display: flex;
+  flex-direction: column; /* Alinha as mensagens em uma coluna */
+  gap: 10px; /* Espaço entre as mensagens */
+}
+
+.user-message {
+  align-self: flex-end; /* Alinha a mensagem do usuário à direita */
+  background-color: #007BFF; /* Cor de fundo da mensagem do usuário */
+  color: white; /* Cor do texto da mensagem do usuário */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  max-width: 80%; /* Largura máxima da mensagem do usuário */
+  word-wrap: break-word; /* Quebra palavras longas */
+}
+
+.bot-message {
+  align-self: flex-start; /* Alinha a mensagem do bot à esquerda */
+  background-color: #f1f1f1; /* Cor de fundo da mensagem do bot */
+  color: black; /* Cor do texto da mensagem do bot */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  max-width: 80%; /* Largura máxima da mensagem do bot */
+  word-wrap: break-word; /* Quebra palavras longas */
+}
+
+#userInput {
+  width: calc(100% - 100px); /* Espaço para o botão */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc; /* Borda da entrada */
+}
+
+button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff64ff; /* Cor do botão */
+  color: white; /* Cor do texto do botão */
+  cursor: pointer;
+}
+
+
+
+
+.button-action {
+  font-family: ' Roboto';
+  display: inline-block; /* Certifica que o botão funciona como bloco */
+  background-color: #111; /* Cor de fundo inicial do botão */
+  color: #ffffff; /* Cor do texto do botão */
+  border: 3px solid rgb(0, 0, 0); /* Borda do botão */
+  padding: 15px 30px; /* Espaçamento interno (padding) do botão */
+  border-radius: 10px; /* Bordas arredondadas */
+  font-size: 1rem; /* Tamanho da fonte */
+  cursor: pointer; /* Ícone de cursor de "pointer" ao passar o mouse */
+  margin: 10px 0; /* Margem para separar o botão dos outros elementos */
+  box-shadow: 0 2px 5px #9370db; /* Sombra do botão para dar profundidade */
+  position: relative; /* Definindo a posição relativa para ajustar o efeito da bolinha */
+  overflow: hidden; /* Para garantir que a bolinha não transborde do botão */
+  text-decoration: none; /* Remove o sublinhado do link */
+  transition: background-color 0.3s ease-in-out; /* Transição suave da cor de fundo ao passar o mouse */
+  width: 100%; /* Ajuste se necessário, pode ser removido se não precisar */
+}
+
+.button-action::before {
+  content: ""; /* Elemento extra para criar a bolinha */
+  position: absolute; /* Posição absoluta dentro do botão */
+  top: 50%; /* Iniciar a bolinha no centro do botão */
+  left: 50%; /* Iniciar a bolinha no centro do botão */
+  width: 300%; /* Definir o tamanho inicial da bolinha maior que o botão */
+  height: 300%; /* Definir o tamanho inicial da bolinha maior que o botão */
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 10%); /* Gradiente radial para criar o efeito de uma bolinha branca no centro */
+  transform: translate(-50%, -50%) scale(0); /* Centralizar a bolinha e começar com escala 0 (invisível) */
+  transition: transform 0.3s ease-in-out; /* Transição suave da escala da bolinha */
+}
+
+.button-action:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Expandir a bolinha ao passar o mouse sobre o botão */
+}
+
+.button-action:hover {
+  background-color: #9370db; /* Mudar a cor de fundo quando o mouse estiver sobre o botão */
+  color: #000000; /* Manter a cor do texto branca */
+}
+
+.button-action:active {
+  transform: scale(0.95); /* Reduzir levemente o botão quando clicado (efeito de clique) */
+  box-shadow: 0 1px 3px #9370db; /* Sombra reduzida quando clicado */
+}
+
+.dark .side-menu {
+  background-color: #000000; /* Cor de fundo do botão */
+  
+}
+
+
+
+/* Tela de Carregamento */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,  blueviolet, rgb(255, 116, 197), #d8bfd8); /* Fundo mais intenso em roxo e rosa */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Para garantir que esteja acima de outros elementos */
+  opacity: 1; /* Começa totalmente visível */
+  transition: opacity 0.5s ease; /* Transição suave para opacidade */
+}
+
+/* Logo carregando */
+.loading-logo {
+  width: 250px; /* Ajuste o tamanho da logo conforme necessário */
+  animation: bounce 1s infinite alternate; /* Animação da logo */
+  margin-top: 100px; /* Ajuste para subir a logo */
+}
+
+/* Animação de bounce (suave) */
+@keyframes bounce {
+  from {
+      transform: translateY(0);
+  }
+  to {
+      transform: translateY(-10px);
+  }
+}
+
+/* Ocultar a tela de carregamento após a transição */
+.hide {
+  opacity: 0; /* Transição para opacidade 0 para ocultar */
+  pointer-events: none; /* Impede interações após a ocultação */
+}
+
+#pro-section h1 {
+  font-family: "inter";
+  color: #111;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.8rem;
+}
+
+.dark #pro-section h1{
+  color: white;
+}
+
+
+/* Seção de Missão, Visão e Valores */
+.mission-vision-values {
+  background: #ffffff00; /* Fundo branco para contraste */
+  padding: 60px 20px;
+  text-align: center;
+ 
+}
+
+.mission-vision-values .section-header h2 {
+  font-size: 40px;
+  color: #3e7996; /* Título azul escuro */
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: fadeIn 1s ease-in-out; /* Animação suave */
+}
+
+body.dark .mission-vision-values .section-header h2 {
+  color: #e4d9b9; /* Título azul escuro */
+
+}
+
+.mission-vision-values .cards-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap; /* Para ajustar em telas menores */
+  animation: fadeIn 1s ease-in-out; /* Animação suave */
+
+}
+
+.mission-vision-values .card {
+  background: #3e7996; /* Fundo azul claro */
+  color: #ffffff; /* Texto branco */
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra para destacar os cards */
+  width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
+.mission-vision-values .card h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.mission-vision-values .card p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.mission-vision-values .card:hover {
+  transform: scale(1.05); /* Leve aumento ao passar o mouse */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
+}
+
+@media (max-width: 768px) {
+  .mission-vision-values .cards-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .mission-vision-values .card {
+      width: 100%;
+      max-width: 350px; /* Ajuste de largura máxima */
+      margin-bottom: 20px; /* Espaçamento entre os cards */
+  }
+}
+
+
+
+
+#scrollBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px; /* Altura da barra */
+  background: linear-gradient(135deg, blueviolet, rgb(255, 116, 197), #d8bfd8); /* Gradiente com repetição */
+  width: 0; /* Inicialmente, a largura é 0 */
+  z-index: 5000; /* Para ficar acima de outros elementos */
+  transition: width 0.1s; /* Suaviza a transição da largura */
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidado ao Próximo</title>
+    <link rel="stylesheet" href="styleDoacao.css">
+    <link rel="icon" href="img/logoss.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&family=Roboto:wght@400;700&family=Lato:wght@400;700&family=Open+Sans:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+
+    
+    <header class="header">
+        <img src="img/cartasdoaçaõ.jpeg" class="shared-image" alt="Descrição da imagem">
+
+        <div class="header-content">
+            <img src="img/menu_ft-removebg-preview.png" alt="Imagem Direita" class="small-img menu-toggle"> 
+            <div id="mouse-light"></div>
+            <img id="logo" src="img/Untitled__1_-removebg-preview.png" alt="Logo" class="logo">
+            <main id="small-img">
+                <label class="containe">
+                  <input type="checkbox" id="toggle"/>
+                  <span class="slider round">
+                    <div class="background"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                  </span>
+                </label>
+              </main>
+        </div>
+       
+        <div class="side-menu">
+            <div class="menu-content">
+                <span class="close-menu">&times;</span>
+                <ul>
+                    <center><h1>MENU</h1></center>
+                    <li><button class="button-action" onclick="window.location.href='index.php'">INÍCIO</button></li>
+                    <li><button class="button-action" onclick="window.location.href='voluntario.html'">VOLUNTARIO</button></li>
+                    <li><button class="button-action" onclick="window.location.href='sobrenos.html'">SOBRE NÓS</button></li>
+                </ul>
+                <p class="voltar-inicio">VOLTAR</p> 
+            </div>
+        </div>
+    </header>
+    <div class="ong-container">
+        <h1>QUERO AJUDAR!</h1>
+        <p>
+            Na <strong>Cuidado ao Próximo</strong>, começamos ajudando poucas pessoas em situação de vulnerabilidade. Com o tempo, crescemos e conseguimos impactar muitas famílias, graças às doações generosas de apoiadores.
+        </p>
+        <p>
+            Entretanto, temos o receio de que os recursos se esgotem. Por isso, precisamos da sua ajuda! Cada doação é essencial para manter nosso trabalho.
+        </p>
+        <p>
+            <strong>Como você pode ajudar:</strong>
+        </p>
+        <ul>
+            <li><strong>Alimentos:</strong> Itens não perecíveis (arroz, feijão, macarrão, enlatados).</li>
+            <li><strong>Roupas Usadas:</strong> Aceitamos roupas em bom estado.</li>
+            <li><strong>Contribuições Financeiras:</strong> Toda ajuda financeira é bem-vinda.</li>
+        </ul>
+        <p>
+            <strong>CADA GESTO CONTA!</strong>
+        </p>
+        <p>
+            Agradecemos de coração a todos que nos apoiam. Sua ajuda é fundamental para continuarmos nossa missão.
+        </p>
+
+        <a href="https://wa.me/5511977364837" target="_blank" style="text-decoration: none;">
+            <button class="btn">FALE CONOSCO</button>
+        </a>
+    </div>
+    
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th colspan="2"><b>DADOS BANCÁRIOS PARA DOAÇÃO</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Banco Bradesco - 237</td>
+                <td>Agência: 0108</td>
+            </tr>
+            <tr>
+                <td>Conta Corrente: 332990-9</td>
+                <td>CNPJ: 48.952.181/0001-82</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <div style="display: inline-flex; align-items: center;">
+                        <h2 style="margin: 0; padding-right: 10px;"><b>cuidadoaoproximo@gmail.com</b></h2>
+                        <button class="copy-btn" onclick="copyText()">
+                            <img src="img/copia-chave__-removebg-preview.png" alt="Copiar" class="copy-icon">
+                        </button>
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="2" class="qr-code">
+                    <img src="img/qrcode.png" alt="qrcode">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function copyText() {
+            const email = "cuidadoaoproximo@gmail.com";
+            navigator.clipboard.writeText(email).then(function() {
+                alert("PIX copiado para a área de transferência!");
+            }, function(err) {
+                console.error('Erro ao copiar: ', err);
+            });
+        }
+        
+    </script>
+
+
+<div class="map-container">
+    <h2 class="map-title"><b>ONDE NOS ENCONTRAR</b></h2>
+    <div class="map-wrapper">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4419903363146!2d-46.5992098!3d-23.5884765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5bf3e1b4dd91%3A0xe723cbd36c8058ad!2sRua%20Mil%20Oitocentos%20e%20Vinte%20e%20Dois%2C%20368%20-%20Ipiranga%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004216-000!5e0!3m2!1spt-BR!2sbr!4v1725666885716!5m2!1spt-BR!2sbr"
+            width="1010"
+            height="500"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+
+<div class="chat-icon" onclick="toggleChat()">
+    <img src="img/assistent ai.jpeg" alt="Chatbot Icon">
+</div>
+
+<div id="chatWindow" class="chat-window" style="display: none;">
+    <div class="chat-header">
+        <span>Assistent AI</span>
+        <button class="close-btn" onclick="toggleChat()">✖</button> <!-- Botão de fechar -->
+    </div>
+    
+    <!-- Substituí o log de chat e o campo de input pelo iframe do chatbot -->
+    <iframe src="https://dash.superagentes.ai/agents/cm2nd2wxc00ejby5xpheesw47/iframe" ></iframe>
+</div>
+
+
+
+  <footer class="footer" id="footer">
+  <div class="footer-content">
+    <div class="footer-section social">
+      <h4><b>Redes Sociais</b></h4>
+      <a href="https://www.facebook.com/profile.php?id=100075605076567&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/cuidadoproximo?igsh=bjQ1YjdhOTh2MmFs" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <div class="footer-section contact">
+      <h4><b>Contato</b></h4>
+      <p>Endereço: Rua Mil Oitocentos e Vinte e Dois, 368 Ipiranga - São Paulo (SP)</p>
+      <p>Email: cuidadoaoproximo@gmail.com</p>
+      <p>Whats: (11) 9 7736-4837 / Fone: (11) 2274-4136</p>
+    </div>
+
+    <div class="footer-section credits">
+      <p>&copy; 2024 ONG Cuidado ao Próximo. Todos os direitos reservados.</p>
+      <p>Desenvolvido por <b>BDRR</b></p>
+    </div>
+  </div>
+</footer>
+
+
+  
+    <script src="luzt.js"></script>
+    
+</body>
+</html>
+    

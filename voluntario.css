@@ -1,0 +1,753 @@
+/* Remover margens e padding do body */
+body {
+    margin: 0;
+    opacity: 0;
+    background-color: #d8bfd8; /* Cor de fundo roxa */
+    animation: revealFromTop 1.5s ease-out forwards;
+    animation-delay: 1s; /* Atraso para iniciar a animação após a logo */
+    overflow-x: hidden; /* Evita a rolagem horizontal */
+  }
+  
+  
+  /* Estilo para a logo com efeito 3D */
+  #logo {
+    width: 300px;
+    height: auto;
+    transition: transform 0.1s; /* Transição suave para o efeito */
+    position: relative; /* Adicionado */
+    z-index: 1; /* Para garantir que fique atrás do efeito de luz */
+  }
+  
+  /* Estilo base da logo */
+  .header-content {
+    position: relative;
+  }
+  
+  /* Estilo do efeito de luz */
+  #mouse-light {
+    position: absolute;
+    width: 150px; /* Aumente ou diminua conforme necessário */
+    height: 150px; /* Aumente ou diminua conforme necessário */
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 249, 207, 0.199), rgba(255, 223, 0, 0) 70%); /* Cor amarela suave */
+    opacity: 0; /* Começa invisível */
+    pointer-events: none; /* Não bloqueia eventos do mouse */
+    transition: opacity 0.35s ease; /* Transição suave */
+    z-index: 2; /* Garantindo que fique na frente da logo */
+  }
+  
+  
+  
+  /* Exibe o conte�do ap�s a anima��o */
+  body.loaded {
+    opacity: 1;
+    overflow: auto; /* Volta a permitir o scroll */
+  
+  }
+  
+  /* Cabe�alho com v�deo de fundo unificado com a tela 1 */
+  .header {
+    position:static;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    width: 100%; /* Garante que a largura seja 100% */
+    overflow: hidden; /* Oculta qualquer conte�do que saia da borda */
+  }
+  
+  
+  .header-content {
+    position: absolute;
+    top: 2px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around; /* Mant�m as imagens nas laterais e a logo centralizada */
+    align-items: center;
+    padding: 0 20px; /* Padding nas laterais */
+    flex-direction: row-reverse;
+    left: 50px;
+  
+  }
+  
+  .small-img {
+    width: 100px;
+    height: auto;
+    margin: 0 20px; /* Margem para afastar mais as imagens do canto */
+  
+  }
+  
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :root{
+    --dark: #111111;
+    --sun: #ffd700;
+    --sun-shadow: #987416;
+    --moon: #dddddd;
+    --moon-shadow: #808080;
+    --star: #ffffff;
+    --cloud: #ffffff;
+    --crater: #535370;
+    --shadow-01: #80808077;
+    --shadow-02: #ffffff22;
+    --shadow-03: #555555;
+    --white: #ffffff;
+    --background-day: linear-gradient(skyblue, cadetblue);
+    --background-night: linear-gradient(-45deg, #222, #000030);
+  }
+  main{
+   
+    -webkit-transition: .4s;
+    transition: .4s;
+  
+  }
+  .dark{
+    background: var(--dark);
+  }
+  .containe{
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height:px;
+  
+    -webkit-transform: scale(3);
+    transform: scale(3);
+  }
+  .containe input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .slider{
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: var(--background-day);
+    box-shadow: inset 0 0 3px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  
+    filter: drop-shadow(0 0 2px var(--dark));
+  
+    overflow: hidden;
+    z-index: 1;
+    width: 100%; /* Ajustar para ocupar todo o contêiner */
+    height: 100%; /* Ajustar para ocupar todo o contêiner */
+  }
+  .slider::before{
+    position: absolute;
+    content: "";
+    height: 10px; /* sol*/
+    width: 10px;/* sol*/
+    left: 2px;
+    bottom: 4px;
+    background-color: var(--sun);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    box-shadow:
+      inset 0 -1px 2px var(--sun-shadow),
+      0 1px 2px var(--shadow-01),
+      0 0 0 10px var(--shadow-02),
+      0 0 0 20px var(--shadow-02),
+      10px 0 0 20px var(--shadow-02);
+  }
+  input:checked + .slider{
+    background: var(--background-night);
+    filter: drop-shadow(0 0 2px var(--white));
+    left: 2px;
+    right: 10px;
+  }
+  
+  input:checked + .slider:before{
+    background: var(--moon);
+    -webkit-transform: translateX(180%);
+    -ms-transform: translateX(180%);
+    transform: translateX(180%);
+    box-shadow:
+      0 1px 2px var(--shadow-03),
+      0 0 0 10px var(--shadow-02),
+      0 0 0 20px var(--shadow-02),
+      -10px 0 0 20px var(--shadow-02);
+  }
+  
+  .slider::after{
+    content: "";
+    position: absolute;
+    background: var(--crater);
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    bottom: 65%;
+    right: 10%;
+  
+    -webkit-transition: .4s;
+    transition: .4s;
+    -webkit-transform: scale(0) rotate(360deg);
+    transform: scale(0) rotate(360deg);
+    filter: saturate(.75);
+  }
+  
+  input:checked + .slider::after{
+    -webkit-transform: scale(1) rotate(-24deg);
+    transform: scale(1) rotate(-24deg);
+  }
+  input:checked + .slider .background{
+    -webkit-transform: translateY(260%);
+    transform: translateY(260%);
+    opacity: 0;
+  }
+  
+  .star{
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider .star{
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border: 10px solid transparent;
+    border-bottom: 7px solid var(--star);
+    transform: rotate(35deg);
+    border-top: none;
+    margin: 5px 0;
+    -webkit-transform: scale(.3) translate(50%);
+    transform: scale(.3) translate(50%);
+  }
+  input:checked + .slider .star:last-child{
+    -webkit-transform: scale(.4) translate(225%, 300%);
+    transform: scale(.4) translate(225%, 300%);
+  }
+  input:checked + .slider .star::before,
+  input:checked + .slider .star::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: none;
+  }
+  input:checked + .slider .star::before{
+    border: 3px solid transparent;
+    border-bottom: 8px solid var(--star);
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
+    top: -7.5px;
+    left: 1.5px;
+  }
+  input:checked + .slider .star::after{
+    border: 10px solid transparent;
+    border-bottom: 7px solid var(--star);
+    -webkit-transform: rotate(70deg);
+    transform: rotate(70deg);
+    top: -7px;
+    left: -4.5px;
+  }
+  .slider.round {
+    border-radius: 34px;
+  }
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .background{
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: var(--cloud);
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+  
+    ;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0; /* Remove margem padr�o */
+    padding: 0 20px; /* Adiciona padding se necess�rio */
+  }
+  
+  /* Estilo das se��es */
+  .section {
+    padding: 50px;
+    text-align: center;
+    background-color: #A351FE; /* Cor de fundo roxa */
+  }
+  
+  /* Estilo do link da localização */
+  .location-link {
+    color: #FF64CD; /* Cor rosa do botão */
+    text-decoration: none; /* Remove o sublinhado */
+  }
+  
+  .location-link:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+  }
+  
+  /* Conteiner com altura escondida por padrão */
+  .info-container {
+    height: 0; /* Escondido por padrão */
+    overflow: hidden;
+    transition: height 0.5s ease; /* Animação de expansão */
+  }
+  
+  /* Expande o container quando o card tem a classe "expanded" */
+  .card.expanded .info-container {
+    height: auto; /* Expande conforme o conteúdo */
+  }
+  
+  .info-text {
+    color: #f834ba;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  /* Anima��o para a rota��o da seta */
+  .seta {
+    color: #FF64CD;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.3s ease; /* Anima��o para a rota��o da seta */
+  }
+  
+  /* Roda a seta quando o conte�do � expandido */
+  .seta.rotated {
+    transform: rotate(180deg); /* Roda a seta para baixo */
+  }
+  
+/* Estilos gerais para o rodapé */
+.footer {
+  background: linear-gradient(30deg, #d8bfd8, rgb(255, 116, 197), rgb(157, 70, 245)); /* Gradiente com repetição */
+  color: #000000; /* Cor do texto do rodapé */
+  padding: 20px 0; /* Espaçamento interno do rodapé */
+  text-align: center; /* Alinhamento do texto ao centro */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  border-top-left-radius: 50px; /* Bordas arredondadas na parte inferior esquerda */
+  border-top-right-radius: 50px; /* Bordas arredondadas na parte inferior direita */
+}
+.footer h4{
+  font-family: 'Montserrat'
+}
+
+.footer-content {
+  max-width: 1200px; /* Largura máxima do conteúdo do rodapé */
+  margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+  display: flex; /* Usa flexbox para alinhar as seções */
+  flex-wrap: wrap; /* Permite que as seções quebrem linha */
+  justify-content: space-around; /* Espaça uniformemente as seções */
+  padding: -60px; /* Espaçamento interno lateral do conteúdo */
+}
+
+.footer-section {
+  margin: 10px; /* Margem entre as seções */
+  flex: 1; /* Flexibilidade das seções */
+  min-width: 200px; /* Largura mínima das seções */
+}
+
+.footer-section h4 {
+  color: #ffe6e6;
+  margin-bottom: 10px; /* Espaçamento abaixo do título */
+  font-size: 1.8em; /* Tamanho da fonte dos títulos */
+}
+
+.footer-section p {
+  font-family: sans-serif;
+  margin: 5px 0; /* Margem entre os parágrafos */
+  line-height: 1.5; /* Altura da linha */
+  font-size: 1.1rem;
+}
+
+.footer-section a {
+  color: #000000; /* Cor dos links */
+  text-decoration: none; /* Remove a sublinhado dos links */
+  margin: 0 10px; /* Margem entre os ícones */
+  font-size: 2em; /* Tamanho dos ícones */
+}
+
+.footer-section a:hover {
+  color: #fff; /* Cor ao passar o mouse nos links */
+}
+
+.footer-section .credits {
+  width: 100%; /* Ocupa 100% da largura disponível */
+  text-align: center; /* Alinha o texto ao centro */
+  margin-top: 20px; /* Espaçamento acima dos créditos */
+}
+
+  
+  .dark {
+    background: var(--dark); /* Defina a cor de fundo desejada aqui */
+    color: rgb(3, 3, 3); /* Adiciona cor de texto clara para contraste */
+  }
+  .dark .side-menu h1{
+    color: white;
+  }
+  
+  /* Mude a cor de fundo de todos os contêineres para preto quando estiver no modo escuro */
+  .container,
+  .section {
+    background-color: #d8bfd8; /* Cor de fundo roxa */
+    transition: background-color 0.4s ease; /* Animação suave *//* Cor de fundo roxa */
+  }
+  
+  .card{
+    background-color: #f5f5f5; /* Cor de fundo roxa */
+  }
+  
+  
+  
+  
+  .dark .container,
+  .dark .card,
+  .dark .section {
+    background-color: #111; /* Cor de fundo escura */
+  }
+  
+  /* Alterando cores para o modo escuro */
+  .dark .card-title,
+  .dark .card-date,
+  .dark .card-location,
+  .dark .info-text {
+    color: #ffffff; /* Cor de texto branca para contraste */
+  }
+  
+  .dark .button-doacao {
+    background-color: #FF64CD; /* Cor de fundo do botão */
+    color: #ffffff; /* Cor do texto do botão */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* Sombra branca */
+  }
+   
+  .dark .location-link {
+    color: #ffffff; /* Cor do link da localização */
+  }
+  
+  /* Ajuste adicional para as sombras dos contêineres */
+  .dark .card {
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* Sombra branca para o card */
+  }
+  
+  /* Para garantir que a seta também fique visível */
+  .dark .seta {
+    color: #ffffff; /* Cor da seta */
+  }
+  
+  
+  
+  /* Estilos para o lateral */
+  .side-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    background-color: #ffffff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    border-radius: 30px 0 0 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .side-menu h1 {
+    font-size: 4rem;
+  }
+  
+  
+  .side-menu.active {
+    transform: translateX(0); /* Move o menu para dentro da tela quando ativo */
+  }
+  
+  .menu-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .side-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .side-menu li a {
+    color: white;
+    border: none;
+    padding: 0;
+    font-size: 1.3rem;
+    cursor: pointer;
+    margin: 15px 0;
+    text-align: center;
+    background-color: transparent;
+  }
+  
+  .side-menu li a:hover {
+    background-color: #9370db;
+  }
+  
+  .voltar-inicio {
+    cursor: pointer;
+    text-align: center;
+    padding: 15px;
+    border: none;
+    background-color: blueviolet;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .voltar-inicio:hover {
+    background-color: #FF64CD;
+  }
+  
+  
+  .button-action {
+    display: inline-block; /* Certifica que o botão funciona como bloco */
+    background-color: #111; /* Cor de fundo inicial do botão */
+    color: #ffffff; /* Cor do texto do botão */
+    border: 3px solid rgb(0, 0, 0); /* Borda do botão */
+    padding: 15px 30px; /* Espaçamento interno (padding) do botão */
+    border-radius: 10px; /* Bordas arredondadas */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Ícone de cursor de "pointer" ao passar o mouse */
+    margin: 10px 0; /* Margem para separar o botão dos outros elementos */
+    box-shadow: 0 2px 5px #9370db; /* Sombra do botão para dar profundidade */
+    position: relative; /* Definindo a posição relativa para ajustar o efeito da bolinha */
+    overflow: hidden; /* Para garantir que a bolinha não transborde do botão */
+    text-decoration: none; /* Remove o sublinhado do link */
+    transition: background-color 0.3s ease-in-out; /* Transição suave da cor de fundo ao passar o mouse */
+    width: 100%; /* Ajuste se necessário, pode ser removido se não precisar */
+  }
+  
+  .button-action::before {
+    content: ""; /* Elemento extra para criar a bolinha */
+    position: absolute; /* Posição absoluta dentro do botão */
+    top: 50%; /* Iniciar a bolinha no centro do botão */
+    left: 50%; /* Iniciar a bolinha no centro do botão */
+    width: 300%; /* Definir o tamanho inicial da bolinha maior que o botão */
+    height: 300%; /* Definir o tamanho inicial da bolinha maior que o botão */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 10%); /* Gradiente radial para criar o efeito de uma bolinha branca no centro */
+    transform: translate(-50%, -50%) scale(0); /* Centralizar a bolinha e começar com escala 0 (invisível) */
+    transition: transform 0.3s ease-in-out; /* Transição suave da escala da bolinha */
+  }
+  
+  .button-action:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Expandir a bolinha ao passar o mouse sobre o botão */
+  }
+  
+  .button-action:hover {
+    background-color: #9370db; /* Mudar a cor de fundo quando o mouse estiver sobre o botão */
+    color: #000000; /* Manter a cor do texto branca */
+  }
+  
+  .button-action:active {
+    transform: scale(0.95); /* Reduzir levemente o botão quando clicado (efeito de clique) */
+    box-shadow: 0 1px 3px #9370db; /* Sombra reduzida quando clicado */
+  }
+  
+  .dark .side-menu {
+    background-color: #000000; /* Cor de fundo do botão */
+    
+  }
+
+  iframe {
+    width: 100%;
+    height: 600px; /* Ajuste conforme necessário */
+    border: none;
+}
+
+.table {
+    width: 50%; /* Aumenta a tabela para ficar maior */
+    top: -400%;
+    max-width: none; /* Remove o limite máximo da tabela */
+    background-color: #e4d9b9;
+    border-radius: 20px; /* Bordas arredondadas na tabela */
+    border: 5px solid #0284ff00; /* Cor da borda */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra leve na tabela */
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+    margin-bottom: 50px;
+  }
+
+  table h2 {
+    margin-top: 20px;  /* Ajuste o valor conforme necessário */
+    margin-bottom: 10px;  /* Ajuste o valor conforme necessário */
+    font-size: 3rem;
+    color: blueviolet;
+}
+
+table p {
+    font-size: 1.5rem;
+    margin-top: 20px;  /* Ajuste o valor conforme necessário */
+    margin-bottom: 10px;  /* Ajuste o valor conforme necessário */
+}
+
+.chat-icon {
+  position: fixed; /* Garante que o ícone fique fixo na tela */
+  bottom: 20px; /* Coloca o ícone a 20px do rodapé da janela */
+  right: 20px;
+  cursor: pointer;
+  z-index: 1000; /* Garante que o ícone fique acima de outros elementos */
+}
+
+.chat-icon img {
+  width: 100px; /* Aumenta o tamanho da imagem */
+  height: 100px; /* Aumenta o tamanho da imagem */
+  border-radius: 50%; /* Faz a imagem ficar circular */
+  border: 5px solid black; /* Adiciona uma borda preta ao redor da imagem */
+}
+
+.dark .chat-icon img{
+  border: 5px solid #FF64CD; /* Adiciona uma borda preta ao redor da imagem */
+}
+
+
+
+.chat-window {
+  display: none;
+  position: fixed;
+  bottom: -400px; /* Coloca a janela fora da tela (desce para fora do rodapé) */
+  right: 30px;
+  height: 400px;
+  width: 500px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1px;
+  padding-right: 0px;
+  z-index: 1000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(255, 100, 205, 0.6); /* Sombra mais forte */
+}
+
+.dark .chat-window{
+  background-color: #000;
+}
+
+.chat-header {
+  font-family: 'Montserrat';
+  display: flex;
+  justify-content: space-between; /* Espaça o título e o botão */
+  align-items: center; /* Centraliza verticalmente */
+  margin-bottom: 10px; /* Espaçamento abaixo do cabeçalho */
+}
+
+.dark .chat-header {
+  color: #FF64CD ;
+}
+
+.dark .close-btn {
+  color: #FF64CD ;
+}
+
+.close-btn {
+  background: none; /* Remove o fundo do botão */
+  border: none; /* Remove a borda do botão */
+  font-size: 20px; /* Tamanho do ícone */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  color: #000;
+}
+
+#chatLog {
+  max-height: 200px; /* Altura máxima do log de chat */
+  overflow-y: auto; /* Permite rolagem quando as mensagens excedem a altura */
+  display: flex;
+  flex-direction: column; /* Alinha as mensagens em uma coluna */
+  gap: 10px; /* Espaço entre as mensagens */
+}
+
+.user-message {
+  align-self: flex-end; /* Alinha a mensagem do usuário à direita */
+  background-color: #007BFF; /* Cor de fundo da mensagem do usuário */
+  color: white; /* Cor do texto da mensagem do usuário */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  max-width: 80%; /* Largura máxima da mensagem do usuário */
+  word-wrap: break-word; /* Quebra palavras longas */
+}
+
+.bot-message {
+  align-self: flex-start; /* Alinha a mensagem do bot à esquerda */
+  background-color: #f1f1f1; /* Cor de fundo da mensagem do bot */
+  color: black; /* Cor do texto da mensagem do bot */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  max-width: 80%; /* Largura máxima da mensagem do bot */
+  word-wrap: break-word; /* Quebra palavras longas */
+}
+
+#userInput {
+  width: calc(100% - 100px); /* Espaço para o botão */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc; /* Borda da entrada */
+}
+
+
+
+
+
+/* Estilos para o Contêiner de Motivação para se Tornar Voluntário */
+.volunteer-container {
+  margin-top: -60vh;
+  padding: 20px;
+  background-color: #d8bfd8;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.volunteer-container h2 {
+  font-family: Georgia;
+  color: blueviolet; /* Cor de fallback para o texto */
+  font-size: 5em;
+  margin-bottom: 15px;
+}
+
+
+.volunteer-container p {
+  font-family:  sans-serif;
+  font-size: 1.4em;
+  color: black ;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.dark .volunteer-container p {
+  color: #e4d9b9;
+}
+
+.video-container {
+  margin-top: 20px;
+  background-color: #d8bfd8;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.dark .video-container{
+  background-color: #111;
+}
+
+video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: -20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  

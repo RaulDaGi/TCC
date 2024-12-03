@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidado ao Próximo</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <video autoplay muted loop class="shared-video">
+            <source src="img/doação.mp4" type="video/mp4">
+        </video>
+        <div class="header-content">
+            <img src="img/menu_ft-removebg-preview.png" alt="Imagem Direita" class="small-img">
+            <img id="logo" src="img/Untitled__1_-removebg-preview.png" alt="Logo" class="logo">
+            <script src="scripts.js"></script>
+            <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
+    
+    
+     <div>
+    
+            <input type="checkbox" class="checkbox" id="chk"/>
+        
+            <label class="label" for="chk">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="ball"></div>
+            </label>
+            
+        </div>
+    </header>
+
+    <section class="section">
+        <!-- Card 1 -->
+        <div class="card-container">
+        <div class="card">
+            <div class="carousel">
+                <img src="projeto1_img1.jpg" alt="Imagem 1">
+                <img src="projeto1_img2.jpg" alt="Imagem 2" style="display:none;">
+                <img src="projeto1_img3.jpg" alt="Imagem 3" style="display:none;">
+            </div>
+            <h2 class="card-title">Projeto tipos sanguíneos</h2>
+            <p class="card-date">Data: 01/10/2024</p>
+            <p class="card-location">
+                Localização: <a href="https://www.google.com/maps/search/?api=1&query=São+Paulo,SP" target="_blank" class="location-link">São Paulo, SP</a>
+            </p>
+            <button class="button-doacao">faça sua Doação</button>
+            <div class="seta" onclick="toggleInfo(this)">▲</div>
+            <div class="info-container">
+                <p class="info-text">Doações para conscientização sobre os tipos sanguíneos.</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="carousel">
+                <img src="projeto2_img1.jpg" alt="Imagem 1">
+                <img src="projeto2_img2.jpg" alt="Imagem 2" style="display:none;">
+                <img src="projeto2_img3.jpg" alt="Imagem 3" style="display:none;">
+            </div>
+            <h2 class="card-title">Cesta básica</h2>
+            <p class="card-date">Data: 05/10/2024</p>
+            <p class="card-location">
+                Localização: <a href="https://www.google.com/maps/search/?api=1&query=São+Paulo,SP" target="_blank" class="location-link">São Paulo, SP</a>
+            </p>
+            <button class="button-doacao">faça sua Doação</button>
+            <div class="seta" onclick="toggleInfo(this)">▲</div>
+            <div class="info-container">
+                <p class="info-text">Doações de alimentos para famílias carentes.</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="carousel">
+                <img src="projeto3_img1.jpg" alt="Imagem 1">
+                <img src="projeto3_img2.jpg" alt="Imagem 2" style="display:none;">
+                <img src="projeto3_img3.jpg" alt="Imagem 3" style="display:none;">
+            </div>
+            <h2 class="card-title">Meu leite já</h2>
+            <p class="card-date">Data: 10/10/2024</p>
+            <p class="card-location">
+                Localização: <a href="https://www.google.com/maps/search/?api=1&query=São+Paulo,SP" target="_blank" class="location-link">São Paulo, SP</a>
+            </p>
+            <button class="button-doacao">faça sua Doação</button>
+            <div class="seta" onclick="toggleInfo(this)">▲</div>
+            <div class="info-container">
+                <p class="info-text">Ajude mães carentes que não têm condições de amamentar seus filhos.</p>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="carousel">
+                <img src="projeto4_img1.jpg" alt="Imagem 1">
+                <img src="projeto4_img2.jpg" alt="Imagem 2" style="display:none;">
+                <img src="projeto4_img3.jpg" alt="Imagem 3" style="display:none;">
+            </div>
+            <h2 class="card-title">Projeto 4</h2>
+            <p class="card-date">Data: 15/10/2024</p>
+            <p class="card-location">
+                Localização: <a href="https://www.google.com/maps/search/?api=1&query=São+Paulo,SP" target="_blank" class="location-link">São Paulo, SP</a>
+            </p>
+            <button class="button-doacao">faça sua Doação</button>
+            <div class="seta" onclick="toggleInfo(this)">▲</div>
+            <div class="info-container">
+                <p class="info-text">Descrição do Projeto 4.</p>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+            <div class="carousel">
+                <img src="projeto5_img1.jpg" alt="Imagem 1">
+                <img src="projeto5_img2.jpg" alt="Imagem 2" style="display:none;">
+                <img src="projeto5_img3.jpg" alt="Imagem 3" style="display:none;">
+            </div>
+            <h2 class="card-title">Projeto 5</h2>
+            <p class="card-date">Data: 20/10/2024</p>
+            <p class="card-location">
+                Localização: <a href="https://www.google.com/maps/search/?api=1&query=São+Paulo,SP" target="_blank" class="location-link">São Paulo, SP</a>
+            </p>
+            <button class="button-doacao">faça sua Doação</button>
+            <div class="seta" onclick="toggleInfo(this)">▲</div>
+            <div class="info-container">
+                <p class="info-text">Descrição do Projeto 5.</p>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+            <div class="carousel">
+                <img src="projeto6_img1.jpg" alt="Imagem 1">
+                <img src="projeto6_img2.jpg" alt="Imagem 2" style="display:none;">
+                <img src="projeto6_img3.jpg" alt="Imagem 3" style="display:none;">
+            </div>
+            <h2 class="card-title">Projeto 6</h2>
+            <p class="card-date">Data: 25/10/2024</p>
+            <p class="card-location">
+                Localização: <a href="https://www.google.com/maps/search/?api=1&query=São+Paulo,SP" target="_blank" class="location-link">São Paulo, SP</a>
+            </p>
+            <button class="button-doacao">faça sua Doação</button>
+            <div class="seta" onclick="toggleInfo(this)">▲</div>
+            <div class="info-container">
+                <p class="info-text">Descrição do Projeto 6.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container text-center mt-2">
+            <p>&copy; 2024 ONG Cuidado ao Próximo. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <b>BDRR</b></p>
+        </div>
+        <script src="script.js"></script>
+    </footer>
+
+    <script src=""></script>
+</body>
+</html>

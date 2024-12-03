@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidado ao Próximo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <video autoplay muted loop class="shared-video">
+            <source src="img/video test02.mp4" type="video/mp4">
+        </video>
+        <div class="header-content">
+            <img src="img/menu_ft-removebg-preview.png" alt="Imagem Direita" class="small-img menu-toggle"> 
+            <div id="mouse-light"></div>
+            <img id="logo" src="img/Untitled__1_-removebg-preview.png" alt="Logo" class="logo">
+            <main id="small-img">
+                <label class="containe">
+                  <input type="checkbox" id="toggle"/>
+                  <span class="slider round">
+                    <div class="background"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                  </span>
+                </label>
+              </main>
+        </div>
+        <div class="central-content">
+            <h1>Faça parte da nossa campanha doe com o coração</h1>
+            <button class="button-doacao">faça sua Doação</button>
+        </div>
+
+        <div class="side-menu">
+            <div class="menu-content">
+                <span class="close-menu">&times;</span>
+                <ul>
+                    <center><h1>MENU</h1></center>
+                    <li><button class="button-action" onclick="window.location.href='doacoes.html'">Página</button></li>
+                    <li><button class="button-action" onclick="window.location.href='#'">Área do Voluntário</button></li>
+                    <li><button class="button-action" onclick="window.location.href='#footer'">Sobre nós</button></li>
+                </ul>
+                <p class="voltar-inicio">Voltar ao Início</p> 
+            </div>
+        </div>
+    </header>
+    <div class="section">
+      <div class="highlight-container">
+          <div class="carousel">
+              <div class="carousel-item active">
+                  <img class="img-destaque" src="img/logo_ong.png" alt="First Project Image">
+                  <div class="text-content">
+                      <h2>Data do jogo</h2>
+                      <p>Description for the first item, Meta Platforms, Inc. é um conglomerado.</p>
+                      <div class="b-tam">
+                          <button class="button-see-more">DOAR</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img class="img-destaque" src="img/test_portifolio.png" alt="Second Project Image">
+                  <div class="text-content">
+                      <h2>The Goal</h2>
+                      <p>Description for the second item, Meta Platforms, Inc. é um conglomerado estadunidense de tecnologia e mídia social com sede em Menlo Park, Califórnia.</p>
+                      <div class="b-tam">
+                          <button class="button-see-more">DOAR</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <img class="img-destaque" src="img/Untitled__1_-removebg-preview.png" alt="Third Project Image">
+                  <div class="text-content">
+                      <h2>Final Goal for World</h2>
+                      <p>Description for the third item.</p>
+                      <div class="b-tam">
+                          <button class="button-see-more">DOAR</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <button class="prev">←</button>
+          <button class="next">→</button>
+      </div>
+  </div>
+  
+      
+    <section class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="light-effect"></div>
+            <div class="card-inner">
+            <div class="carousel">
+                <img src="img/imgtelaex.jpg" alt="Imagem 1">
+                <img src="img/logo ong.png" alt="Imagem 2" style="display:none;">
+                <img src="img/test portifolio.png" alt="Imagem 3" style="display:none;">
+            </div>
+            <h2 class="card-title">Projeto tipos sanguíneos</h2>
+            <p class="card-date">Data: 01/10/2024</p>
+            <p class="card-location">
+                Localização: <a href="https://www.google.com/maps/search/?api=1&query=São+Paulo,SP" target="_blank" class="location-link">São Paulo, SP</a>
+            </p>
+            <button class="button-see-more">DOAR</button>
+            <div class="seta" onclick="toggleInfo(this)">▲</div>
+            <div class="info-container">
+                <p class="info-text">Doações para conscientização sobre os tipos sanguíneos.</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="light-effect"></div>
+            <div class="card-inner">
+            <div class="carousel">
+                <img src=" " alt="Imagem 1">
+                <img src=" " alt="Imagem 2" style="display:none;">
+                <img src=" " alt="Imagem 3" style="display:none;">
+            </div>
+            <h2 class="card-title">Cesta básica</h2>
+            <p class="card-date">Data: 05/10/2024</p>
+            <p class="card-location">
+                Localização: <a href="https://www.google.com/maps/search/?api=1&query=São+Paulo,SP" target="_blank" class="location-link">São Paulo, SP</a>
+            </p>
+            <button class="button-see-more">faça doação</button>
+            <div class="seta" onclick="toggleInfo(this)">▲</div>
+            <div class="info-container">
+                <p class="info-text">Doações de alimentos para famílias carentes.</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="light-effect"></div>
+            <div class="card-inner">
+            <div class="carousel">
+                <img src=" " alt="Imagem 1">
+                <img src=" " alt="Imagem 2" style="display:none;">
+                <img src=" " alt="Imagem 3" style="display:none;">
+            </div>
+            <h2 class="card-title">Meu leite já</h2>
+            <p class="card-date">Data: 10/10/2024</p>
+            <p class="card-location">
+                Localização: <a href="https://www.google.com/maps/search/?api=1&query=São+Paulo,SP" target="_blank" class="location-link">São Paulo, SP</a>
+            </p>
+            <button class="button-see-more">SEE MORE →</button>
+            <div class="seta" onclick="toggleInfo(this)">▲</div>
+            <div class="info-container">
+                <p class="info-text">Ajude mães carentes que não têm condições de amamentar seus filhos.</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="light-effect"></div>
+            <div class="card-inner">
+            <div class="carousel">
+                <img src="img/logo ong.png" alt="Imagem 1">
+                <img src=" " alt="Imagem 2" style="display:none;">
+                <img src=" " alt="Imagem 3" style="display:none;">
+            </div>
+            <h2 class="card-title">Projeto 4</h2>
+            <p class="card-date">Data: 15/10/2024</p>
+            <p class="card-location">
+                Localização: <a href="https://www.google.com/maps/search/?api=1&query=São+Paulo,SP" target="_blank" class="location-link">São Paulo, SP</a>
+            </p>
+            <button class="button-see-more">SEE MORE →</button>
+            <div class="seta" onclick="toggleInfo(this)">▲</div>
+            <div class="info-container">
+                <p class="info-text">Descrição do Projeto 4.</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+            <div class="light-effect"></div>
+            <div class="card-inner">
+            <div class="carousel">
+                <img src=" " alt="Imagem 1">
+                <img src=" " alt="Imagem 2" style="display:none;">
+                <img src=" " alt="Imagem 3" style="display:none;">
+            </div>
+            <h2 class="card-title">Projeto 5</h2>
+            <p class="card-date">Data: 20/10/2024</p>
+            <p class="card-location">
+                Localização: <a href="https://www.google.com/maps/search/?api=1&query=São+Paulo,SP" target="_blank" class="location-link">São Paulo, SP</a>
+            </p>
+            <button class="button-see-more">SEE MORE →</button>
+            <div class="seta" onclick="toggleInfo(this)">▲</div>
+            <div class="info-container">
+                <p class="info-text">Descrição do Projeto 5.</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+            <div class="light-effect"></div>
+            <div class="card-inner">
+            <div class="carousel">
+                <img src=" " alt="Imagem 1">
+                <img src=" " alt="Imagem 2" style="display:none;">
+                <img src=" " alt="Imagem 3" style="display:none;">
+            </div>
+            <h2 class="card-title">Projeto 6</h2>
+            <p class="card-date">Data: 25/10/2024</p>
+            <p class="card-location">
+                Localização: <a href="https://www.google.com/maps/search/?api=1&query=São+Paulo,SP" target="_blank" class="location-link">São Paulo, SP</a>
+            </p>
+            <button class="button-see-more">SEE MORE →</button>
+            <div class="seta" onclick="toggleInfo(this)">▲</div>
+            <div class="info-container">
+                <p class="info-text">Descrição do Projeto 6.</p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <body>
+        <div class="chat-icon" onclick="toggleChat()">
+            <img src="img/logo ong.png" alt="Chatbot Icon">
+        </div>
+        <div id="chatWindow" class="chat-window">
+            <div class="chat-header">
+                <span>Chatbot</span>
+                <button class="close-btn" onclick="toggleChat()">✖</button> <!-- Botão de fechar -->
+            </div>
+            <div id="chatLog"></div>
+            <input type="text" id="userInput" placeholder="Digite aqui" />
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+
+  <footer class="footer" id="footer">
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h4><b>Sobre nós</b></h4>
+      <p>Somos a <b>ONG Cuidado ao Próximo</b>, uma organização comprometida em apoiar e transformar comunidades carentes. Desde nossa fundação em 2022, temos nos dedicado a criar oportunidades e promover o bem-estar de indivíduos e famílias que enfrentam dificuldades. Nossa missão é transformar vidas através da solidariedade e do trabalho em equipe.</p>
+    </div>
+
+    <div class="footer-section social">
+      <h4><b>Redes Sociais</b></h4>
+      <a href="https://www.facebook.com/profile.php?id=100075605076567&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/cuidadoproximo?igsh=bjQ1YjdhOTh2MmFs" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <div class="footer-section contact">
+      <h4><b>Contato</b></h4>
+      <p>Endereço: Rua Mil Oitocentos e Vinte e Dois, 368 Ipiranga - São Paulo (SP)</p>
+      <p>Email: cuidadoaoproximo@gmail.com</p>
+      <p>Whats: (11) 9 7736-4837 / Fone: (11) 2274-4136</p>
+    </div>
+
+    <div class="footer-section credits">
+      <p>&copy; 2024 ONG Cuidado ao Próximo. Todos os direitos reservados.</p>
+      <p>Desenvolvido por <b>BDRR</b></p>
+    </div>
+  </div>
+</footer>
+
+
+  
+    <script src="scripts.js"></script>
+    
+</body>
+</html>
+    
